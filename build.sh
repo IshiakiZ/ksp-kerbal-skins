@@ -29,9 +29,12 @@ case "$MODE" in
   dist|install)
     mkdir -p "$OUT"
     WITH="$KEYSTONE" compile "$OUT/KerbalSkins.dll" "" src/KerbalSkins
+    # (the mod's own shaders, if it has any: made by tools/shaderpack/make_bundle.py and kept ready made in src/KerbalSkins/Shaders)
+    if ls src/KerbalSkins/Shaders/*.bundle >/dev/null 2>&1; then mkdir -p "$OUT/PluginData"; cp src/KerbalSkins/Shaders/*.bundle "$OUT/PluginData/"; fi
     if [ "$MODE" = dist ]; then echo "ok: built into $OUT"; exit 0; fi
     mkdir -p "$KSP_DIR/GameData/KerbalSkins"
     cp "$OUT/KerbalSkins.dll" "$KSP_DIR/GameData/KerbalSkins/"
+    if [ -d "$OUT/PluginData" ]; then mkdir -p "$KSP_DIR/GameData/KerbalSkins/PluginData"; cp "$OUT/PluginData"/*.bundle "$KSP_DIR/GameData/KerbalSkins/PluginData/"; fi
     echo "ok: Kerbal Skins installed to $KSP_DIR/GameData/KerbalSkins (restart KSP to load it; it needs Keystone there too)"
     ;;
   *)
