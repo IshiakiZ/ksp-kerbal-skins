@@ -33,10 +33,10 @@ kerbal outside the ship all show it.
 * Made and tried on a Mac. It is plain C# with no shader or library of its own, so it should work on
   Windows and Linux as well, but it has **not been run** there.
 
-More: [how it works and what it costs](docs/How-it-works.md),
-[choosing colours](docs/Choosing-colours.md),
-[limits](docs/Limits.md),
-[building it yourself](docs/Building.md).
+More: [how it works and what it costs](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/How-it-works),
+[choosing colours](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/Choosing-colours),
+[limits](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/Limits),
+[building it yourself](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/Building).
 
 ## Licence
 
