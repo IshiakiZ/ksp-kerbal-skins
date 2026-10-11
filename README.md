@@ -9,7 +9,7 @@ For Kerbal Space Program 1.12.x. Needs [Keystone](https://github.com/IshiakiZ/ks
 
 ## Install
 
-Copy the `Keystone` and `KerbalSkins` folders from the download's `GameData` into your KSP `GameData`.
+Copy the `Keystone` and `KerbalSkins` folders from the download into your KSP `GameData`.
 
 ## Use
 
