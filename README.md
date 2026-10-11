@@ -30,8 +30,14 @@ kerbal outside the ship all show it.
 ## Good to know
 
 * It works in flight, with the game's stock heads. Heads from other mods are left alone.
-* Made and tried on a Mac. It is plain C# with no shader or library of its own, so it should work on
-  Windows and Linux as well, but it has **not been run** there.
+
+## Where it works
+
+| System | |
+| --- | --- |
+| Mac | Made and tried here. |
+| Windows | Tried on Windows 11 (KSP 1.12.5): "any colour" gave the kerbals in their portraits skins of their own colours, and was kept across a restart. Then a kerbal outside the ship: Valentina on the pad with her helmet off, her skin the same peach as in her portrait, not the game's green. The cockpit view of the others was not looked at (from the middle seat of a Mk1-3 pod they are out of the head's turn). |
+| Linux | **Never run.** It is plain C# with no shader or library of its own. |
 
 More: [how it works and what it costs](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/How-it-works),
 [choosing colours](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/Choosing-colours),
