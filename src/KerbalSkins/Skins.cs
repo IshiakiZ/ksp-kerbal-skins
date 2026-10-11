@@ -35,7 +35,7 @@ namespace KerbalSkins
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public sealed class Skins : MonoBehaviour
     {
-        public const string Version = "0.1.2";
+        public const string Version = "0.1.3";
 
         /// <summary>The kerbals' own colour, as it is in the game's pictures (the middle one of all their skin's points).</summary>
         public static readonly Color Classic = new Color(198f / 255f, 212f / 255f, 127f / 255f, 1f);

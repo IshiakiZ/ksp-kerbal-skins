@@ -13,6 +13,6 @@ USE
   Mac and Alt-K elsewhere. Then turn to Kerbal Skins and switch on "Change skin colours".
 
 WHERE IT WORKS
-  Made and tried on a Mac. Nobody has run it on Windows or Linux yet.
+  Made and tried on a Mac, and tried on Windows 11. Nobody has run it on Linux yet.
 
 Everything else: https://github.com/IshiakiZ/ksp-kerbal-skins
