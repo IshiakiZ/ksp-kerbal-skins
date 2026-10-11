@@ -5,6 +5,8 @@ choice for any one of them. Only the skin changes; hair, eyes, mouths and suits 
 
 For Kerbal Space Program 1.12.x. Needs [Keystone](https://github.com/IshiakiZ/ksp-keystone), which comes in the download.
 
+![Five kerbals in the game's own green, then each in a colour of their own as the mod is switched on](src/KerbalSkins/img/kerbal-skins.gif)
+
 ![The same kerbal in the game's own green, in blue and in brown](src/KerbalSkins/img/skins-three.jpg)
 
 ## Install
@@ -46,4 +48,4 @@ More: [how it works and what it costs](https://github.com/IshiakiZ/ksp-kerbal-sk
 
 ## Licence
 
-[MIT](LICENSE).
+[CC BY 4.0](LICENSE): use it, change it and pass it on as you like, as long as you credit Ishiaki and link back here.
