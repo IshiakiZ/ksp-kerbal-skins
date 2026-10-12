@@ -3,7 +3,7 @@
 The colour of the kerbals' skin: one colour for everyone, a different one for each kerbal, or your own
 choice for any one of them. Only the skin changes; hair, eyes, mouths and suits stay as they are.
 
-For Kerbal Space Program 1.12.x. Needs [Keystone](https://github.com/IshiakiZ/ksp-keystone), which comes in the download.
+For Kerbal Space Program 1.12.x. Needs [Keystone](https://github.com/IshiakiZ/ksp-keystone), a separate download ([its page on SpaceDock](https://spacedock.info/mod/4665/Keystone)): this mod does not load without it.
 
 ![Five kerbals in the game's own green, then each in a colour of their own as the mod is switched on](src/KerbalSkins/img/kerbal-skins.gif)
 
@@ -11,7 +11,8 @@ For Kerbal Space Program 1.12.x. Needs [Keystone](https://github.com/IshiakiZ/ks
 
 ## Install
 
-Copy the `Keystone` and `KerbalSkins` folders from the download into your KSP `GameData`.
+Install [Keystone](https://github.com/IshiakiZ/ksp-keystone) first: it is a download of its own, and its `Keystone` folder goes into your KSP
+`GameData`. Then copy the `KerbalSkins` folder from this mod's download into `GameData` beside it.
 
 ## Use
 
