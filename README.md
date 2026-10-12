@@ -1,51 +1,33 @@
 # Kerbal Skins
 
-The colour of the kerbals' skin: one colour for everyone, a different one for each kerbal, or your own
-choice for any one of them. Only the skin changes; hair, eyes, mouths and suits stay as they are.
-
-For Kerbal Space Program 1.12.x. Needs [Keystone](https://github.com/IshiakiZ/ksp-keystone), a separate download ([its page on SpaceDock](https://spacedock.info/mod/4665/Keystone)): this mod does not load without it.
+The colour of the kerbals' skin: one colour for everyone, a different one for each kerbal, or your own choice for
+any one of them. Only the skin changes; hair, eyes, mouths and suits stay as they are.
 
 ![Five kerbals in the game's own green, then each in a colour of their own as the mod is switched on](src/KerbalSkins/img/kerbal-skins.gif)
 
-![The same kerbal in the game's own green, in blue and in brown](src/KerbalSkins/img/skins-three.jpg)
+For Kerbal Space Program 1.12.x. **Needs [Keystone](https://github.com/IshiakiZ/ksp-keystone)**, a separate download
+([on SpaceDock](https://spacedock.info/mod/4665/Keystone)): this mod does not load without it.
 
 ## Install
 
-Install [Keystone](https://github.com/IshiakiZ/ksp-keystone) first: it is a download of its own, and its `Keystone` folder goes into your KSP
-`GameData`. Then copy the `KerbalSkins` folder from this mod's download into `GameData` beside it.
+Copy the `KerbalSkins` folder from the download into your KSP's `GameData`, beside `Keystone`.
 
 ## Use
 
-Open the Keystone window (the keystone button on the game's toolbar, or Option-K on a Mac, Alt-K
-elsewhere), turn to **Kerbal Skins** and switch on **Change skin colours**.
-
-![The mod's page, with one kerbal's colour being chosen](src/KerbalSkins/img/skins-picker.jpg)
-
-* **Everyone**: the colour of every kerbal who has not been given one of their own.
-* **Each their own**: gives every such kerbal a different colour, always the same for the same name, from
-  eight greens or from sixteen colours of any kind.
-* **The kerbals here**: click a kerbal's colour box, then click or drag on the gradient, pick from the
-  row of ready colours, or type a colour as six hex digits. `as the rest` takes it away again.
-
-A kerbal's own colour is remembered by name, in every save. The cockpit view, the portraits and the
-kerbal outside the ship all show it.
+Open the Keystone window (the keystone button on the game's toolbar, or Alt-K; Option-K on a Mac), turn to
+**Kerbal Skins** and switch on **Change skin colours**. Set one colour for everyone, let each kerbal have their own,
+or click a kerbal's colour box to choose theirs. A kerbal's own colour is remembered by name, in every save.
 
 ## Good to know
 
 * It works in flight, with the game's stock heads. Heads from other mods are left alone.
 
-## Where it works
+## Works on
 
-| System | |
-| --- | --- |
-| Mac | Made and tried here. |
-| Windows | Tried on Windows 11 (KSP 1.12.5): "any colour" gave the kerbals in their portraits skins of their own colours, and was kept across a restart. Then a kerbal outside the ship: Valentina on the pad with her helmet off, her skin the same peach as in her portrait, not the game's green. The cockpit view of the others was not looked at (from the middle seat of a Mk1-3 pod they are out of the head's turn). |
-| Linux | **Never run.** It is plain C# with no shader or library of its own. |
+Windows 11 and Mac: tried. Linux: never run (it is plain C#, with nothing of one system's in it).
 
-More: [how it works and what it costs](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/How-it-works),
-[choosing colours](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/Choosing-colours),
-[limits](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/Limits),
-[building it yourself](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/Building).
+**More:** [the long description](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki/The-long-description) (everything in full, and what
+was tried on each system) and the rest of the [wiki](https://github.com/IshiakiZ/ksp-kerbal-skins/wiki).
 
 ## Licence
 
