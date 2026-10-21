@@ -34,14 +34,25 @@ if [ -f src/KerbalSkins/needs.txt ]; then
   done < src/KerbalSkins/needs.txt
 fi
 
+# A companion library for the Harmony mod, where this mod has one (src/KerbalSkinsHarmony): built against this mod and against
+# Harmony, only where Harmony is installed in the game, and loaded by the game only where it is.
+HARMONY="$KSP_DIR/GameData/000_Harmony/0Harmony.dll"
+companion() {  # companion <folder the mod's own library is in>
+  [ -d src/KerbalSkinsHarmony ] || return 0
+  if [ -f "$HARMONY" ]; then WITH="$KEYSTONE:$1/KerbalSkins.dll:$HARMONY" compile "$1/KerbalSkinsHarmony.dll" "" src/KerbalSkinsHarmony
+  else rm -f "$1/KerbalSkinsHarmony.dll"; echo "left out: KerbalSkinsHarmony (Harmony is not installed here to build it against)"; fi
+}
+
 case "$MODE" in
   check)
     WITH="$KEYSTONE" compile "$TMP/KerbalSkins.dll" "" src/KerbalSkins
+    companion "$TMP"
     echo "ok: compiles"
     ;;
   dist|install)
     mkdir -p "$OUT"
     WITH="$KEYSTONE" compile "$OUT/KerbalSkins.dll" "" src/KerbalSkins
+    companion "$OUT"
     # (the mod's own shaders, if it has any: made by tools/shaderpack/make_bundle.py and kept ready made in src/KerbalSkins/Shaders)
     if ls src/KerbalSkins/Shaders/*.bundle >/dev/null 2>&1; then mkdir -p "$OUT/PluginData"; cp src/KerbalSkins/Shaders/*.bundle "$OUT/PluginData/"; fi
     # (and anything else it keeps in src/KerbalSkins/PluginData: a craft file, say)
@@ -49,6 +60,8 @@ case "$MODE" in
     if [ "$MODE" = dist ]; then echo "ok: built into $OUT"; exit 0; fi
     mkdir -p "$KSP_DIR/GameData/KerbalSkins"
     cp "$OUT/KerbalSkins.dll" "$KSP_DIR/GameData/KerbalSkins/"
+    rm -f "$KSP_DIR/GameData/KerbalSkins/KerbalSkinsHarmony.dll"
+    [ -f "$OUT/KerbalSkinsHarmony.dll" ] && cp "$OUT/KerbalSkinsHarmony.dll" "$KSP_DIR/GameData/KerbalSkins/"
     if [ -d "$OUT/PluginData" ]; then mkdir -p "$KSP_DIR/GameData/KerbalSkins/PluginData"; cp -R "$OUT/PluginData/." "$KSP_DIR/GameData/KerbalSkins/PluginData/"; fi
     echo "ok: Kerbal Skins installed to $KSP_DIR/GameData/KerbalSkins (restart KSP to load it; it needs Keystone there too)"
     ;;

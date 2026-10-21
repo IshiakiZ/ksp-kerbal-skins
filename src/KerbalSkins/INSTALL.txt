@@ -2,6 +2,8 @@ Kerbal Skins @VERSION@
 for Kerbal Space Program 1.12.x
 
 The colour of the kerbals' skin: one for everyone, a different one for each kerbal, or your own choice for any one of them.
+From 0.2.0 their hair and eyes too (each kerbal's own, or your choice), people's own skin tones, every scene where
+kerbals are drawn, and other mods' heads.
 
 INSTALL
   This mod needs Keystone, the base it stands on, which is a separate download:
@@ -14,8 +16,11 @@ INSTALL
 USE
   Open the Keystone window: the keystone button on the game's toolbar, or Option-K on a
   Mac and Alt-K elsewhere. Then turn to Kerbal Skins and switch on "Change skin colours".
+  With "Each their own" on, "Their own hair too" and "Their own eye colour too" colour those
+  as well; click a kerbal's colour box to choose theirs.
 
 WHERE IT WORKS
-  Made and tried on a Mac, and tried on Windows 11. Nobody has run it on Linux yet.
+  Made and tried on a Mac; 0.1.3 was tried on Windows 11 too. What 0.2.0 adds has been run
+  on the Mac only so far (it is plain C#). Nobody has run it on Linux yet.
 
 Everything else: https://github.com/IshiakiZ/ksp-kerbal-skins
