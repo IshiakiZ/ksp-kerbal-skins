@@ -6,7 +6,7 @@ From 0.2.0 their hair and eyes too (each kerbal's own, or your choice), people's
 kerbals are drawn, and other mods' heads.
 
 INSTALL
-  This mod needs Keystone, the base it stands on, which is a separate download:
+  This mod needs Keystone 0.11 or later, the base it stands on, which is a separate download:
     https://spacedock.info/mod/4665/Keystone
   Copy Keystone's folder (Keystone) into your KSP's GameData folder, and the KerbalSkins
   folder from this download beside it, and start the game. Without Keystone the game does

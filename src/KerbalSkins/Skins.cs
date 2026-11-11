@@ -7,7 +7,7 @@ using UnityEngine;
 
 #if !DEV
 [assembly: KSPAssembly("KerbalSkins", 0, 1)]
-[assembly: KSPAssemblyDependency("Keystone", 0, 4)]
+[assembly: KSPAssemblyDependency("Keystone", 0, 11)]
 #endif
 
 namespace KerbalSkins
@@ -37,7 +37,7 @@ namespace KerbalSkins
     [KSPAddon(KSPAddon.Startup.EveryScene, false)]
     public sealed class Skins : MonoBehaviour
     {
-        public const string Version = "0.2.0";
+        public const string Version = "0.3.0";
 
         /// <summary>The kerbals' own colour, as it is in the game's pictures (the middle one of all their skin's points).</summary>
         public static readonly Color Classic = new Color(198f / 255f, 212f / 255f, 127f / 255f, 1f);
@@ -67,7 +67,7 @@ namespace KerbalSkins
         /// <summary>A tone of the scale made a kerbal's own: up to 6% lighter or darker and a little warmer or cooler, by two numbers from 0 to 1.</summary>
         static Color Own(Color tone, float light, float warm)
         {
-            float l = 0.94f + 0.12f * light, w = 0.03f * (warm - 0.5f);
+            float by = Of(varies, 1f), l = 1f + by * (0.12f * light - 0.06f), w = by * 0.03f * (warm - 0.5f);
             return new Color(Mathf.Clamp01(tone.r * l * (1f + w)), Mathf.Clamp01(tone.g * l), Mathf.Clamp01(tone.b * l * (1f - w)), 1f);
         }
 
@@ -102,6 +102,15 @@ namespace KerbalSkins
         static Tint everyone;
         static Choice variety;
         static Toggle hairToo, eyesToo;
+        // (the page's fine detail, in its Advanced view: as installed it does what the mod did before it had it)
+        static Slider varies;
+        static float Of(Slider slider, float installed) => slider != null ? (float)slider : installed;
+
+        /// <summary>The settings added after Fine(true) are fine details: on the page only in Keystone's Advanced view, until Fine(false).
+        /// (Keystone 0.11.0 has the two views; an older one has neither call, and shows the fine details with the rest.)</summary>
+        static void Fine(bool fine) { try { if (fine) Advanced(mod); else Simple(mod); } catch (Exception) { } }
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)] static void Advanced(Mod page) => page.Advanced();
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)] static void Simple(Mod page) => page.Simple();
 
         // The game's own head pictures, as points that can be read (taken off the graphics card once), and the copies made of them.
         static readonly Dictionary<Texture, Color32[]> sources = new Dictionary<Texture, Color32[]>();
@@ -134,6 +143,9 @@ namespace KerbalSkins
                 everyone = mod.Tint("everyone", "Everyone", Classic, "The colour of every kerbal who has not been given one of their own below.");
                 variety = mod.Choice("variety", "Each their own", 0, new[] { "no", "greens", "any colour", "people's" },
                     "Give every kerbal without a colour of their own a different one, always the same one for the same name: shades of green, any colour at all, or people's own skin (the ten tones of the Monk Skin Tone Scale, each kerbal a little lighter, darker, warmer or cooler than the tone).");
+                Fine(true);
+                varies = mod.Slider("varies", "How much each tone varies", 1f, 0f, 3f, "x", 2, "With people's own skin: how much lighter or darker, warmer or cooler each kerbal's is than the tone it is drawn from. 0, exactly the ten tones. For a kerbal hired from now on, or one never given their own.");
+                Fine(false);
                 hairToo = mod.Toggle("hair", "Their own hair too", true,
                     "With each their own skin, each their own hair colour as well, always the same for the same name: black and browns for most, blond, red and grey for a few, as among people (darker skin mostly black and dark brown). Off: the game's dark brown for all but those given a colour below.");
                 eyesToo = mod.Toggle("eyes", "Their own eye colour too", true,

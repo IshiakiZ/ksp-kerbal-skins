@@ -26,7 +26,8 @@ or click a kerbal's colour box to choose theirs. A kerbal's own colour is rememb
   crew) take a colour of their own when each has their own.
 * With **Each their own** on, a kerbal newly hired is given one of the colours at random, kept by name from then on.
   `people's` (0.2.0) gives people's own skin: the ten tones of the Monk Skin Tone Scale (Ellis Monk and Google, CC BY 4.0),
-  each kerbal a little lighter, darker, warmer or cooler than the tone.
+  each kerbal a little lighter, darker, warmer or cooler than the tone (with Keystone 0.11.0, how much so is a finer detail in
+  its Advanced view).
 * **Their own hair too** and **their own eye colour too** (0.2.0): with each their own, every kerbal's hair and eyes are
   their own colours as well, kept by name, in the shares people's come in. Any kerbal's can be chosen on the page.
 
